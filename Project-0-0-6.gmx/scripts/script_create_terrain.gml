@@ -1,9 +1,20 @@
 ///Create Terrain
+
+//Ini Variables
 maxlength = floor(room_width);
+
+//Default Biome
 maxdist = 10;
 maxy = floor(room_height)-320;
 //miny = floor(room_height);
 height_change = 32;
+
+//Biome Stuff
+//Types: Fields, Hills, Mountains, Desert, Tundra (snow), Heaven, Hell.
+type = "Fields"; //Default
+surface = "Flat"; //Flat, Hills, Extreme Hills
+caves = false;
+
 
 
 randomize(); //Randomizes random() at game reset

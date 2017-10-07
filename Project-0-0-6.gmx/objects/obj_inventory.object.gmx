@@ -25,7 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Intventory
+            <string>///Inventory
+
+//IniVariables
+selected_item = "sword";
+
+
 globalvar showInt;
 showInv = true;
 globalvar maxItems;
@@ -70,7 +75,7 @@ for (i = 0; i &lt; maxItems; i += 1)
     
     if (global.inventory[i] != -1)
     {
-        draw_sprite(sprite_sword,0,x1+32+(64*i),y1+32)
+        draw_sprite(asset_get_index("sprite_" + selected_item),0,x1+32+(64*i),y1+32)
         draw_sprite(sprite_ui_box,1,x1+32+(64*i),y1+32)
     }
     else
