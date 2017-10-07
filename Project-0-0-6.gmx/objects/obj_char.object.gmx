@@ -108,12 +108,12 @@ if (place_meeting(x,y+1,obj_terrain))
     
     //Movement only allowed on terrain
     //Crouching
-    if (key_down &amp;&amp; move == 0 &amp;&amp; attack == 0)
+    if (key_down &amp;&amp; move == 0)
     {
         sprite_index = sprite_crouch;
     }
     //Walking
-    if (move != 0 &amp;&amp; jumping == 0 &amp;&amp; attack == 0)
+    if (move != 0 &amp;&amp; jumping == 0)
     {
         sprite_index = sprite_walking;
         image_speed = 0.25;
