@@ -38,9 +38,13 @@ jumping = 0;
 
 script_create_terrain();
 
+//global.weaponselect = 1;
+//global.equipped = 0;
+
 sword = instance_create(x,y+100,obj_items)
 sword.sprite_index = sprite_sword;
 sword.depth = -1000;
+
 
 </string>
           </argument>
@@ -70,7 +74,14 @@ key_left = -keyboard_check(ord("A"));
 key_down = keyboard_check(ord("S"));
 key_jump = keyboard_check_pressed(vk_space);
 
-
+//What weapon it is
+//if(global.weaponselect = 1 &amp;&amp; global.equipped = 0)
+//{
+//sword = instance_create(x,y+100,obj_items)
+//sword.sprite_index = sprite_sword;
+//sword.depth = -1000;
+//global.equipped = 1;
+//}
 
 //Movement
 move = key_right + key_left;
@@ -205,6 +216,7 @@ view_yview=clamp(view_yview,0,room_height-view_hview);
           <argument>
             <kind>1</kind>
             <string>obj_char.attack = 0;
+sword.sprite_index = sprite_sword;
 </string>
           </argument>
         </arguments>
@@ -231,11 +243,17 @@ view_yview=clamp(view_yview,0,room_height-view_hview);
 attack = 1;
 if (obj_char.sword.x &lt; (obj_char.x+20)) 
 {
-obj_char.sword.x += 20;
+obj_char.sword.x = x;
+sword.image_speed = 0.25;
+sword.sprite_index = sprite_sword_swing
+obj_char.sword.y = y;
 }
 else
 {
-obj_char.sword.x -= 20;
+obj_char.sword.x = x;
+sword.image_speed = 0.25;
+sword.sprite_index = sprite_sword_swing
+obj_char.sword.y = y;
 }
 sprite_index = sprite_attack_slash;
 </string>
