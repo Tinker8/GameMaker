@@ -265,7 +265,10 @@ held_item.image_speed = 0.25;
 held_item.sprite_index = sprite_sword_swing
 obj_char.held_item.y = y;
 }
-sprite_index = sprite_attack_slash;
+if (!jumping)
+{
+    sprite_index = sprite_attack_slash;
+}
 </string>
           </argument>
         </arguments>
