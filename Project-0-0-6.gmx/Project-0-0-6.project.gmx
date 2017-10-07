@@ -15,9 +15,11 @@
     <sprite>sprites\sprite_enemy_box</sprite>
     <sprite>sprites\sprite_ui_box</sprite>
     <sprite>sprites\sprite_attack_slash</sprite>
+    <sprite>sprites\sprite_sword_swing</sprite>
     <sprite>sprites\sprite_attack_jump</sprite>
     <sprite>sprites\sprite_jump</sprite>
     <sprite>sprites\sprite_crouch</sprite>
+    <sprite>sprites\sprite_bow</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

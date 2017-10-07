@@ -121,9 +121,103 @@ window_center();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Fullscreen
-if (window_get_fullscreen()) window_set_fullscreen(false);
-else if (!window_get_fullscreen()) window_set_fullscreen(true);
+            <string>///AI/Movement
+
+//AI Random monvement
+key_right = keyboard_check(ord("D"));
+key_left = -keyboard_check(ord("A"));
+key_down = keyboard_check(ord("S"));
+key_jump = keyboard_check_pressed(vk_space);
+
+
+
+//Contact with the player
+if (place_meeting(x-50,y,obj_char))
+{
+    
+}
+
+
+
+///Player Inputs and movement
+key_right = keyboard_check(ord("D"));
+key_left = -keyboard_check(ord("A"));
+key_down = keyboard_check(ord("S"));
+key_jump = keyboard_check_pressed(vk_space);
+
+
+
+//Movement
+move = key_right + key_left;
+hsp = move * movespeed;
+
+//???
+if (vsp &lt; 10) vsp += grav;
+
+//If char lands on ground, reset jumps
+if (place_meeting(x,y+1,obj_terrain))
+{
+    jump_limit = 2;
+    jumping = 0;
+    
+    //Movement only allowed on terrain
+    //Crouching
+    if (key_down &amp;&amp; move == 0 &amp;&amp; attack = 0)
+    {
+        sprite_index = sprite_crouch;
+    }
+    //Walking
+    if (move != 0 &amp;&amp; jumping == 0 &amp;&amp; attack = 0)
+    {
+        sprite_index = sprite_walking;
+        image_speed = 0.25;
+        //image_xscale = move;
+        sword.image_xscale = move;
+    }
+    //Idle
+    if (move == 0 &amp;&amp; jumping == 0 &amp;&amp; !key_down &amp;&amp; attack = 0)
+    {
+        sprite_index = sprite_idle;
+        image_speed = 0.1;
+    }
+}
+
+if (key_jump &amp;&amp; jump_limit &gt; 0)
+{
+    jumping = 1;
+    vsp = key_jump * -jumpspeed;
+    jump_limit --;
+    sprite_index = sprite_jump;
+}
+
+if (move != 0) image_xscale = move;
+
+//Allows player to walk up steps
+if (place_meeting(x+hsp,y,obj_terrain) &amp;&amp; !place_meeting(x+hsp,y-16,obj_terrain)) {y -= 8;}
+
+//Horizontal Collision/Wall Collision
+if (place_meeting(x+hsp,y,obj_terrain))
+{
+
+    while(!place_meeting(x+sign(hsp),y,obj_terrain))
+    {
+    
+        x += sign(hsp);
+    }
+    hsp = 0;
+}
+x += hsp;
+
+//Vertical Collision
+if (place_meeting(x,y+vsp,obj_terrain))
+{
+    while(!place_meeting(x,y+sign(vsp),obj_terrain))
+    {
+        y += sign(vsp);
+    }
+    vsp = 0;
+}
+y += vsp;
 </string>
           </argument>
         </arguments>
