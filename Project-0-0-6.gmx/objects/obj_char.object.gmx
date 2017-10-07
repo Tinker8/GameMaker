@@ -229,7 +229,14 @@ view_yview=clamp(view_yview,0,room_height-view_hview);
             <kind>1</kind>
             <string>//Attack test
 attack = 1;
-if (obj_char.sword.x &lt; (obj_char.x+20)) obj_char.sword.x += 20;
+if (obj_char.sword.x &lt; (obj_char.x+20)) 
+{
+obj_char.sword.x += 20;
+}
+else
+{
+obj_char.sword.x -= 20;
+}
 sprite_index = sprite_attack_slash;
 </string>
           </argument>
