@@ -20,6 +20,7 @@
     <sprite>sprites\sprite_jump</sprite>
     <sprite>sprites\sprite_crouch</sprite>
     <sprite>sprites\sprite_bow</sprite>
+    <sprite>sprites\sprite_fall</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -28,6 +29,10 @@
     <script>scripts\script_create_terrain.gml</script>
     <script>scripts\Patch_Notes.gml</script>
     <script>scripts\script_create_quest.gml</script>
+    <script>scripts\scr_getinputs.gml</script>
+    <script>scripts\scr_changewep.gml</script>
+    <script>scripts\scr_normalmove.gml</script>
+    <script>scripts\scr_collision.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_terrain</object>
