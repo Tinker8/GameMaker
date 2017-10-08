@@ -73,8 +73,8 @@ key_right = keyboard_check(ord("D"));
 key_left = -keyboard_check(ord("A"));
 key_down = keyboard_check(ord("S"));
 key_jump = keyboard_check_pressed(vk_space);
-key_one = keyboard_check_pressed("1");
-key_two = keyboard_check_pressed("2");
+key_one = keyboard_check_pressed(ord("1"));
+key_two = keyboard_check_pressed(ord("2"));
 
 //What weapon it is
 if(key_one)
@@ -226,7 +226,7 @@ view_yview=clamp(view_yview,0,room_height-view_hview);
           <argument>
             <kind>1</kind>
             <string>obj_char.attack = 0;
-held_item.sprite_index = sprite_sword;
+//held_item.sprite_index = sprite_sword;
 </string>
           </argument>
         </arguments>
@@ -253,16 +253,16 @@ held_item.sprite_index = sprite_sword;
 attack = 1;
 if (obj_char.held_item.x &lt; (obj_char.x+20)) 
 {
-obj_char.held_item.x = x;
+obj_char.held_item.x = x+20
 held_item.image_speed = 0.25;
-held_item.sprite_index = sprite_sword_swing
+//held_item.sprite_index = sprite_sword_swing
 obj_char.held_item.y = y;
 }
 else
 {
-obj_char.held_item.x = x;
+obj_char.held_item.x = x-20;
 held_item.image_speed = 0.25;
-held_item.sprite_index = sprite_sword_swing
+//held_item.sprite_index = sprite_sword_swing
 obj_char.held_item.y = y;
 }
 if (!jumping)
