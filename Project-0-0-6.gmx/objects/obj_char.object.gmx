@@ -80,10 +80,12 @@ key_two = keyboard_check_pressed(ord("2"));
 if(key_one)
 {
     held_item.sprite_index = sprite_sword;
+    obj_inventory.selected_item = "sword";
 }
 else if (key_two)
 {
     held_item.sprite_index = sprite_bow;
+    obj_inventory.selected_item = "bow";
 }
 //if(global.weaponselect = 1 &amp;&amp; global.equipped = 0)
 //{
