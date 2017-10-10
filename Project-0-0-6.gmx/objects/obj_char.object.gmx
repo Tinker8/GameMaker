@@ -35,6 +35,7 @@ hp = 100;
 attack = 0;
 jump_limit = 2;
 jumping = 0;
+state = states.normal;
 
 script_create_terrain();
 
@@ -69,12 +70,9 @@ held_item.depth = -1000;
           <argument>
             <kind>1</kind>
             <string>///Player Inputs and movement
-key_right = keyboard_check(ord("D"));
-key_left = -keyboard_check(ord("A"));
-key_down = keyboard_check(ord("S"));
-key_jump = keyboard_check_pressed(vk_space);
 key_one = keyboard_check_pressed(ord("1"));
 key_two = keyboard_check_pressed(ord("2"));
+
 
 //What weapon it is
 if(key_one)
@@ -87,6 +85,7 @@ else if (key_two)
     held_item.sprite_index = sprite_bow;
     obj_inventory.selected_item = "bow";
 }
+
 //if(global.weaponselect = 1 &amp;&amp; global.equipped = 0)
 //{
 //sword = instance_create(x,y+100,obj_items)
@@ -95,10 +94,24 @@ else if (key_two)
 //global.equipped = 1;
 //}
 
+
+/*
 //Movement
 move = key_right + key_left;
 hsp = move * movespeed;
 
+*/
+
+/*
+//att
+if (att &amp;&amp; move == 0)
+{
+    image_index = 0;
+    sprite_index = sprite_attack_slash;
+}
+*/
+
+/*
 //???
 if (vsp &lt; 10) vsp += grav;
 
@@ -110,26 +123,30 @@ if (place_meeting(x,y+1,obj_terrain))
     
     //Movement only allowed on terrain
     //Crouching
-    if (key_down &amp;&amp; move == 0)
+    if (key_down &amp;&amp; move == 0 &amp;&amp; attack == 0)
     {
         sprite_index = sprite_crouch;
     }
     //Walking
-    if (move != 0 &amp;&amp; jumping == 0)
+    if (move != 0 &amp;&amp; jumping == 0 &amp;&amp; attack == 0)
     {
         sprite_index = sprite_walking;
-        image_speed = 0.25;
+        //image_speed = 0.25;
         //image_xscale = move;
         held_item.image_xscale = move;
     }
     //Idle
-    if (move == 0 &amp;&amp; jumping == 0 &amp;&amp; !key_down &amp;&amp; attack == 0)
+    if (move == 0 &amp;&amp; jumping == 0 &amp;&amp; !key_down &amp;&amp; !att)
     {
         sprite_index = sprite_idle;
-        image_speed = 0.1;
+        //image_speed = 0.1;
     }
+
 }
 
+*/
+
+/*
 if (key_jump &amp;&amp; jump_limit &gt; 0)
 {
     jumping = 1;
@@ -137,7 +154,9 @@ if (key_jump &amp;&amp; jump_limit &gt; 0)
     jump_limit --;
     sprite_index = sprite_jump;
 }
+*/
 
+/*
 if (move != 0) image_xscale = move;
 
 //Allows player to walk up steps
@@ -176,6 +195,14 @@ if (attack == 0)
     held_item.y = y;
 }
 
+*/
+
+scr_getinputs();
+
+switch (state)
+{
+    case states.normal: scr_normalmove(); break;
+}
 </string>
           </argument>
         </arguments>
@@ -205,72 +232,6 @@ view_yview=y-view_hview/2-10;
 //clamp to room
 view_xview=clamp(view_xview,0,room_width-view_wview);
 view_yview=clamp(view_yview,0,room_height-view_hview);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="56">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>obj_char.attack = 0;
-//held_item.sprite_index = sprite_sword;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="6" enumb="50">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//Attack test
-attack = 1;
-if (obj_char.held_item.x &lt; (obj_char.x+20)) 
-{
-obj_char.held_item.x = x+20
-held_item.image_speed = 0.25;
-//held_item.sprite_index = sprite_sword_swing
-obj_char.held_item.y = y;
-}
-else
-{
-obj_char.held_item.x = x-20;
-held_item.image_speed = 0.25;
-//held_item.sprite_index = sprite_sword_swing
-obj_char.held_item.y = y;
-}
-if (!jumping)
-{
-    sprite_index = sprite_attack_slash;
-}
 </string>
           </argument>
         </arguments>
