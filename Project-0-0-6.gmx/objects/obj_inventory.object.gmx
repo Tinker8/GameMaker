@@ -27,21 +27,37 @@
             <kind>1</kind>
             <string>///Inventory
 
+//Inventory array
+for (i = 0; i &lt; 2; i++)
+{
+    invArray[i] = 0;
+}
+
 //IniVariables
 selected_item = "sword";
-
-
-globalvar showInt;
+globalvar showInventory;
 showInv = true;
 globalvar maxItems;
 maxItems = 5;
+temp = 0;
 
+//Items
+/*
+0 = sword
+1 = bow
+
+*/
+
+
+//Set every hotbar slot to empty
 for (i = 0; i &lt; maxItems; i += 1)
 {
-    global.inventory[i] = -1;
+    global.hotbar[i] = -1;
 }
 
-global.inventory[2] = 1;
+global.hotbar[0] = 0; //hotbar slot 1 now has a sword
+global.hotbar[1] = 1; //hotbar slot 2 now has a bow
+
 </string>
           </argument>
         </arguments>
@@ -69,20 +85,25 @@ global.inventory[2] = 1;
 x1 = view_xview[0];
 y1 = view_yview[0];
 
-
+//Create hotbar box's
 for (i = 0; i &lt; maxItems; i += 1)
 {
     
-    if (global.inventory[i] != -1)
+    if (global.hotbar[i] != -1)
     {
-        draw_sprite(asset_get_index("sprite_" + selected_item),0,x1+32+(64*i),y1+32)
-        draw_sprite(sprite_ui_box,1,x1+32+(64*i),y1+32)
+        draw_sprite(asset_get_index("sprite_" + global.itemArray[i,1]),0,x1+32+(64*i),y1+32)
+        draw_sprite(sprite_ui_box,0,x1+32+(64*i),y1+32)
     }
     else
     {
         draw_sprite(sprite_ui_box,0,x1+32+(64*i),y1+32)
     }
 }
+//Draw item selection box
+if (selected_item == "sword") temp = 0; //Need to find better way to to this, like match array index (obj_char code)
+if (selected_item == "bow") temp = 1;
+
+draw_sprite(sprite_ui_box,1,x1+32+(64*temp),y1+32)
 </string>
           </argument>
         </arguments>

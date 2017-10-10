@@ -24,4 +24,5 @@ if (place_meeting(x,y+vsp,obj_terrain))
     }
     vsp = 0;
 }
-y += vsp; 
+y += vsp;
+
