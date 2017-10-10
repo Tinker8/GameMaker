@@ -1,10 +1,9 @@
 scr_getinputs();
 
-held_item.x = x;
-held_item.y = y;
+scr_changewep();
 
-//Just control movements
-move = (key_right + key_left);
+//Controls Movement/Speed
+move = key_right + key_left;
 hsp = movespeed * move;
 
 //Vertical speed
@@ -17,28 +16,30 @@ image_speed = 0.25;
 //Gravity for jumping
 if (vsp < 10) vsp += grav;
 
+//Need to add jumping to states???
 //Resets the number of jumps when the character hits the ground
 if (place_meeting(x,y+1,obj_terrain))
 {
-    jump_limit = 2;
     jumping = 0;
+    jump_limit = max_jumps;
 }
 
 //Idle animation
-if(hsp == 0 && !key_down && jump_limit ==2)
+if(hsp == 0 && !key_down && !jumping) //Make idle state?
 {
     sprite_index = sprite_idle;
+    image_speed = 0.1;
 }
 
 //Crouching animation and reduce speed to 0 when crouched
-if(key_down && hsp == 0)
+if(key_down && !jumping)
 {
     sprite_index = sprite_crouch;
     hsp = 0;
 }
 
-//Movement animation
-if(hsp != 0 && jumping != 1)
+//Movement/Walking animation
+if(hsp != 0 && !jumping)
 {
     sprite_index = sprite_walking;
 }
@@ -53,10 +54,15 @@ if(key_jump && jump_limit > 0)
 }
 
 //Controls reverse images
-if (move != 0) 
+if (move != 0) //if move is 1, images are positive (normal position), if -1, images are reversed
 {
     image_xscale = move;
     held_item.image_xscale = move;
 }
 
-scr_collision(); 
+scr_collision();
+
+//Updates where current item is (held by player)
+//THIS NEEDS TO STAY AFTER COLLISION
+held_item.x = x;
+held_item.y = y;

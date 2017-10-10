@@ -26,12 +26,12 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\Coding_notes.gml</script>
-    <script>scripts\script_create_terrain.gml</script>
     <script>scripts\Patch_Notes.gml</script>
+    <script>scripts\script_create_terrain.gml</script>
     <script>scripts\script_create_quest.gml</script>
     <script>scripts\scr_getinputs.gml</script>
-    <script>scripts\scr_changewep.gml</script>
     <script>scripts\scr_normalmove.gml</script>
+    <script>scripts\scr_changewep.gml</script>
     <script>scripts\scr_collision.gml</script>
   </scripts>
   <objects name="objects">

@@ -10,7 +10,9 @@
   <persistent>0</persistent>
   <colour>16777215</colour>
   <showcolour>-1</showcolour>
-  <code>enum states
+  <code>script_create_terrain();
+
+enum states
 {
     normal,
     attack

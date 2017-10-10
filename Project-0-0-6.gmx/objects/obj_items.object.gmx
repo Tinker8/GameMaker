@@ -27,6 +27,11 @@
             <kind>1</kind>
             <string>///Items
 
+//
+//Need to split this up into Item (one being created/given to the player)
+//And list of all items in the game, held by an array to store item stats
+//
+
 //Stats
 //id
 //Name
