@@ -6,8 +6,7 @@ scr_changewep();
 move = key_right + key_left;
 hsp = movespeed * move;
 
-//Vertical speed
-vsp += 0.2;
+
 
 //Control the speed of the image
 image_speed = 0.25;
@@ -72,7 +71,4 @@ if(key_att)
 
 scr_collision();
 
-//Updates where current item is (held by player)
-//THIS NEEDS TO STAY AFTER COLLISION
-held_item.x = x;
-held_item.y = y;
+

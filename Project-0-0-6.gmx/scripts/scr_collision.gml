@@ -2,6 +2,9 @@
 //Allows player to walk up steps
 if (place_meeting(x+hsp,y,obj_terrain) && !place_meeting(x+hsp,y-16,obj_terrain)) {y -= 8;}
 
+//Vertical speed
+vsp += 0.2;
+
 //Horizontal Collision/Wall Collision
 if (place_meeting(x+hsp,y,obj_terrain))
 {
@@ -26,3 +29,7 @@ if (place_meeting(x,y+vsp,obj_terrain))
 }
 y += vsp;
 
+//Updates where current item is (held by player)
+//THIS NEEDS TO STAY AFTER COLLISION
+held_item.x = x;
+held_item.y = y;

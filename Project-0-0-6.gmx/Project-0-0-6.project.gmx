@@ -39,7 +39,7 @@
   </scripts>
   <objects name="objects">
     <object>objects\obj_sword_hitbox</object>
-    <object>objects\obj_arrow_hitbox</object>
+    <object>objects\obj_bow_hitbox</object>
     <object>objects\obj_terrain</object>
     <object>objects\obj_display_manager</object>
     <object>objects\obj_items</object>

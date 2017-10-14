@@ -3,7 +3,8 @@ image_speed = 0.5
 
 sprite_index = sprite_attack_slash;
 
-if (weapon_type == 001)
+/* Don't need to repeat this code
+if (obj_inventory.selected_item == "sword")
 {
     if(image_index >= 1) && (image_index <= 3)
     {
@@ -12,21 +13,21 @@ if (weapon_type == 001)
             image_xscale = other.image_xscale;
         }
     }
-}
-if (weapon_type == 002)
-{
+}*/
+//if (obj_inventory.selected_item == "bow") not nessecary?
+//{
     if(image_index >= 1) && (image_index <= 3)
     {
-        with(instance_create(x,y,obj_arrow_hitbox))
+        with(instance_create(x,y,asset_get_index("obj_" + obj_inventory.selected_item + "_hitbox")))
         {
-            if(obj_arrow_hitbox.alarm[0] = -1)
+            if(obj_inventory.selected_item == "bow" && obj_bow_hitbox.alarm[0] == -1)
             {
-                obj_arrow_hitbox.alarm = 5;
-                image_xscale = other.image_xscale;
+                obj_bow_hitbox.alarm = 5;
             }
+            image_xscale = other.image_xscale;
         }
     }
-}
+//}
 
-
+scr_collision();
 
