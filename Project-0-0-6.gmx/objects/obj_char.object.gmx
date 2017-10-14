@@ -37,6 +37,7 @@ max_jumps = 1;
 jump_limit = 1;
 jumping = 0;
 state = states.normal;
+weapon_type = 001;
 
 
 held_item = instance_create(x,y+100,obj_items)
@@ -70,6 +71,7 @@ held_item.depth = -1000;
 switch (state)
 {
     case states.normal: scr_normalmove(); break;
+    case states.attack: scr_attack(); break;
 }
 
 //Attack Script
@@ -111,6 +113,33 @@ view_yview=y-view_hview/2-10;
 //clamp to room
 view_xview=clamp(view_xview,0,room_width-view_wview);
 view_yview=clamp(view_yview,0,room_height-view_hview);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Once animation has ended it change it back to normal state
+if(sprite_index == sprite_attack_slash)
+{
+    state = states.normal;
+}
 </string>
           </argument>
         </arguments>

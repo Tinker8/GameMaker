@@ -60,6 +60,16 @@ if (move != 0) //if move is 1, images are positive (normal position), if -1, ima
     held_item.image_xscale = move;
 }
 
+//Attack
+if(key_att)
+{
+    state = states.attack;
+    
+    image_index = 0;
+    
+    //sprite_index = sprite_attack_slash;
+}
+
 scr_collision();
 
 //Updates where current item is (held by player)
