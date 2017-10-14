@@ -15,21 +15,31 @@
     <sprite>sprites\sprite_enemy_box</sprite>
     <sprite>sprites\sprite_ui_box</sprite>
     <sprite>sprites\sprite_attack_slash</sprite>
+    <sprite>sprites\sprite_sword_hitbox</sprite>
     <sprite>sprites\sprite_sword_swing</sprite>
     <sprite>sprites\sprite_attack_jump</sprite>
     <sprite>sprites\sprite_jump</sprite>
     <sprite>sprites\sprite_crouch</sprite>
     <sprite>sprites\sprite_bow</sprite>
+    <sprite>sprites\sprite_fall</sprite>
+    <sprite>sprites\sprite_wood_arrow</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\Coding_notes.gml</script>
-    <script>scripts\script_create_terrain.gml</script>
     <script>scripts\Patch_Notes.gml</script>
+    <script>scripts\script_create_terrain.gml</script>
     <script>scripts\script_create_quest.gml</script>
+    <script>scripts\scr_getinputs.gml</script>
+    <script>scripts\scr_normalmove.gml</script>
+    <script>scripts\scr_changewep.gml</script>
+    <script>scripts\scr_collision.gml</script>
+    <script>scripts\scr_attack.gml</script>
   </scripts>
   <objects name="objects">
+    <object>objects\obj_sword_hitbox</object>
+    <object>objects\obj_bow_hitbox</object>
     <object>objects\obj_terrain</object>
     <object>objects\obj_display_manager</object>
     <object>objects\obj_items</object>
