@@ -37,7 +37,7 @@ max_jumps = 1;
 jump_limit = 1;
 jumping = 0;
 state = states.normal;
-
+can_att = 1;
 
 held_item = instance_create(x,y+100,obj_items)
 held_item.sprite_index = sprite_sword;
@@ -127,6 +127,7 @@ view_yview=clamp(view_yview,0,room_height-view_hview);
 if(sprite_index == sprite_attack_slash)
 {
     state = states.normal;
+    can_att = 1;
 }
 </string>
           </argument>
