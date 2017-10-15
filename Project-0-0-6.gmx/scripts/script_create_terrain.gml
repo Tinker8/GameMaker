@@ -14,7 +14,7 @@ height_change = 32;
 //surface = "Flat"; Flat, Hills, Extreme Hills
 //caves = false;
 
-//Setup empty array
+//Setup empty biome array
 for (i = 0; i < 2; i++)
 {
     for (j = 0; j < 7; j++)
@@ -23,6 +23,7 @@ for (i = 0; i < 2; i++)
     }
 }
 
+//Biome Settings
 biomeArray[0,0] = "Fields"; //Name
 biomeArray[0,1] = "Flat"; //SurfaceType
 biomeArray[0,2] = false; //Caves no
