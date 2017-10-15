@@ -66,6 +66,8 @@ if(key_att)
     
     image_index = 0;
     
+    
+    
     //sprite_index = sprite_attack_slash;
 }
 
