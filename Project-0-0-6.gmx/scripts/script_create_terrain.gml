@@ -108,7 +108,7 @@ for(x = 1; x < maxlength; x += 1)
     block_grass.sprite_index = sprite_ground_grass;
     
     var underground = floor(room_height)-maxy;
-    for (i = 0; i < 6; i++)//underground < floor(room_height); i++)
+    for (i = 0; i < 20; i++)//underground < floor(room_height); i++)
     {
         underground += 64;
         var block_mud = instance_create((x*32)-16,maxy+32+(32*i),obj_terrain);

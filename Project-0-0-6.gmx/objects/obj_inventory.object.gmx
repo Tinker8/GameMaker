@@ -104,6 +104,11 @@ if (selected_item == "sword") temp = 0; //Need to find better way to to this, li
 if (selected_item == "bow") temp = 1;
 
 draw_sprite(sprite_ui_box,1,x1+32+(64*temp),y1+32)
+
+instance_deactivate_region(view_xview-64, view_yview-64, view_wview+64, view_hview+64, 0, 1);
+instance_activate_region(view_xview - 16, view_yview - 16, view_wview + 32, view_hview + 32, 1);
+
+
 </string>
           </argument>
         </arguments>
