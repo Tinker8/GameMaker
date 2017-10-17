@@ -23,6 +23,7 @@
     <sprite>sprites\sprite_bow</sprite>
     <sprite>sprites\sprite_fall</sprite>
     <sprite>sprites\sprite_wood_arrow</sprite>
+    <sprite>sprites\sprite_dummy</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -47,6 +48,7 @@
     <object>objects\obj_enemy</object>
     <objects name="Player">
       <object>objects\obj_char</object>
+      <object>objects\obj_dummy</object>
       <object>objects\obj_inventory</object>
       <object>objects\obj_skills</object>
     </objects>
