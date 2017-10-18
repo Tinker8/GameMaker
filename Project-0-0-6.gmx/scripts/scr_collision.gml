@@ -5,6 +5,10 @@ if (place_meeting(x+hsp,y,obj_terrain) && !place_meeting(x+hsp,y-16,obj_terrain)
 //Vertical speed
 vsp += 0.2;
 
+//Keeps player within the room bounderies
+x = (clamp(x,32,room_width - 32));
+y = (clamp(y,64,room_height - 64));
+
 //Horizontal Collision/Wall Collision
 if (place_meeting(x+hsp,y,obj_terrain))
 {
