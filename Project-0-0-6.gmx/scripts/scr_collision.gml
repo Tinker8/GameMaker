@@ -5,6 +5,9 @@ if (place_meeting(x+hsp,y,obj_terrain) && !place_meeting(x+hsp,y-16,obj_terrain)
 //Vertical speed
 vsp += 0.2;
 
+//Gravity for jumping
+if (vsp < 10) vsp += grav;
+
 //Keeps player within the room bounderies
 x = (clamp(x,32,room_width - 32));
 y = (clamp(y,64,room_height - 64));
@@ -30,10 +33,10 @@ if (place_meeting(x,y+vsp,obj_terrain))
         y += sign(vsp);
     }
     vsp = 0;
-}
+} 
 y += vsp;
 
 //Updates where current item is (held by player)
 //THIS NEEDS TO STAY AFTER COLLISION
-held_item.x = x;
-held_item.y = y;
+obj_char.held_item.x = x;
+obj_char.held_item.y = y;

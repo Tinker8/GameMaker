@@ -6,14 +6,8 @@ scr_changewep();
 move = key_right + key_left;
 hsp = movespeed * move;
 
-
-
 //Control the speed of the image
 image_speed = 0.25;
-
-
-//Gravity for jumping
-if (vsp < 10) vsp += grav;
 
 //Need to add jumping to states???
 //Resets the number of jumps when the character hits the ground
@@ -71,6 +65,6 @@ if(key_att)
     //sprite_index = sprite_attack_slash;
 }
 
-scr_collision();
+
 
 

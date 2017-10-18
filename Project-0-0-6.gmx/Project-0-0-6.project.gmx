@@ -46,9 +46,9 @@
     <object>objects\obj_items</object>
     <object>objects\obj_enemy_box</object>
     <object>objects\obj_enemy</object>
+    <object>objects\obj_dummy</object>
     <objects name="Player">
       <object>objects\obj_char</object>
-      <object>objects\obj_dummy</object>
       <object>objects\obj_inventory</object>
       <object>objects\obj_skills</object>
     </objects>
