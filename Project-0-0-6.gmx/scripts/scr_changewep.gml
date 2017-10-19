@@ -22,12 +22,3 @@ else if (key_two)
     obj_inventory.selected_item = "bow";
 }
 
-
-//if(global.weaponselect = 1 && global.equipped = 0)
-//{
-//sword = instance_create(x,y+100,obj_items)
-//held_item.sprite_index = sprite_sword;
-//sword.depth = -1000;
-//global.equipped = 1;
-//}
-

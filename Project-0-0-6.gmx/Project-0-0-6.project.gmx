@@ -28,15 +28,21 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\Coding_notes.gml</script>
-    <script>scripts\Patch_Notes.gml</script>
-    <script>scripts\script_create_terrain.gml</script>
+    <scripts name="Terrain">
+      <script>scripts\script_create_terrain.gml</script>
+    </scripts>
+    <scripts name="Player">
+      <script>scripts\scr_getinputs.gml</script>
+      <script>scripts\scr_normalmove.gml</script>
+      <script>scripts\scr_attack.gml</script>
+      <script>scripts\scr_changewep.gml</script>
+    </scripts>
     <script>scripts\script_create_quest.gml</script>
-    <script>scripts\scr_getinputs.gml</script>
-    <script>scripts\scr_normalmove.gml</script>
-    <script>scripts\scr_changewep.gml</script>
     <script>scripts\scr_collision.gml</script>
-    <script>scripts\scr_attack.gml</script>
+    <scripts name="Notes">
+      <script>scripts\Coding_notes.gml</script>
+      <script>scripts\Patch_Notes.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_sword_hitbox</object>

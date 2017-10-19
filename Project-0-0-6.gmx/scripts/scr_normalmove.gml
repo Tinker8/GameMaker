@@ -65,6 +65,6 @@ if(key_att)
     //sprite_index = sprite_attack_slash;
 }
 
-
+scr_collision();
 
 

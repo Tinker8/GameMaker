@@ -13,10 +13,11 @@ if(image_index >= 1) && (image_index <= 3) //What does this do? nothing???
         if(obj_inventory.selected_item == "bow")
         {
             ID.hspeed = image_xscale * 5;
+            ID.vspeed = 1;
         }
         ID.image_xscale = other.image_xscale;
         
     }
 }
 
-//scr_collision();
+scr_collision();

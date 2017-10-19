@@ -12,7 +12,9 @@ height_change = 32;
 //Biome Stuff
 //Types: Fields, Hills, Mountains, Desert, Tundra (snow), Heaven, Hell.
 //surface = "Flat"; Flat, Hills, Extreme Hills
-//caves = false;
+//caves = false; //holes in cliff faces
+//tunnels  //archways/pillers with platform above
+//pits //holes down
 
 //Setup empty biome array
 for (i = 0; i < 2; i++)
@@ -55,6 +57,23 @@ biomeSelect = 1;
 //floating platforms {freqency (number of platforms), width, type?, height from ground}
 //underground {cavern size, underground specific biomes?}
 //caves {width (random between 5-15?), depth? (randomize each block going down), angle/direction, number of branches?}
+
+//even terrain script
+//only move blocks 0-3 distance high/low for smooth terrain
+//choose(0,0,0,0,0,0,1,1,1,1,2,2,3)
+
+//cave
+//if hill, pick direction (left/right), pick random length (5-20)
+//gen platform
+
+//pit
+//random width, random depth, random direction
+//even terrain - sideways
+
+//underground cavern
+//random height/width, even terrain edges
+
+
 
 for(x = 1; x < maxlength; x += 1) 
 {
@@ -108,7 +127,7 @@ for(x = 1; x < maxlength; x += 1)
     block_grass.sprite_index = sprite_ground_grass;
     
     var underground = floor(room_height)-maxy;
-    for (i = 0; i < 20; i++)//underground < floor(room_height); i++)
+    for (i = 0; i < 10; i++)//underground < floor(room_height); i++)
     {
         underground += 64;
         var block_mud = instance_create((x*32)-16,maxy+32+(32*i),obj_terrain);
